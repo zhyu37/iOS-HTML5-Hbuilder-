@@ -34,5 +34,27 @@ NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEn
 
 <p>Hbuilder
 <pre>
-Hbuilder是由国内开发者开发HTML5开发平台，可以快速集成安卓端、iOS端、网页。
+Hbuilder是由国内开发者开发HTML5开发平台，可以快速集成安卓端、iOS端、网页。采用mui框架，mui框架基于htm5plus的XMLHttpRequest，封装了常用的Ajax函数
+
+</pre>
+<p>mui框架AJAX
+<pre>
+//文档:http://dev.dcloud.net.cn/mui/
+mui.ajax('http://server-name/login.php',{
+	data:{
+		username:'username',
+		password:'password'
+	},
+	dataType:'json',//服务器返回json格式数据
+	type:'post',//HTTP请求类型
+	timeout:10000,//超时时间设置为10秒；
+	success:function(data){
+		//服务器返回响应，根据响应结果，分析是否登录成功；
+		...
+	},
+	error:function(xhr,type,errorThrown){
+		//异常处理；
+		console.log(type);
+	}
+});
 </pre>
